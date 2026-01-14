@@ -98,3 +98,31 @@ and limitations.
 
 These limitations are explicitly considered during evaluation and analysis.
 
+## System Design Perspective
+
+The project can be viewed as a conceptual seismic event classification system
+operating on continuous waveform streams. A real-world deployment would include:
+
+- Continuous waveform ingestion from seismic stations
+- Real-time preprocessing using the same detrending and filtering pipeline
+- Sliding window generation for near–real-time inference
+- Model inference using a classical ML model for robustness and interpretability
+- Temporal aggregation of predictions to reduce false alarms
+- Human-in-the-loop review for low-confidence or ambiguous cases
+
+This design prioritizes reliability, transparency, and practical deployment
+constraints.
+
+---
+
+## Future Work
+
+Several extensions could further improve the system:
+
+- Validation on independent seismic events and multiple stations
+- Use of multi-component (ZNE) waveform data
+- Training on larger benchmark datasets (e.g., STEAD)
+- Incorporation of confidence-based decision thresholds
+- Exploration of hybrid models combining handcrafted features and deep learning
+
+
