@@ -32,6 +32,38 @@ data services (e.g., IRIS). The data includes:
 Waveforms are treated as time-series signals and processed using standard
 seismological preprocessing techniques before being used for machine learning.
 
+## Methodology
+
+The project is structured into multiple phases, each addressing a specific
+stage of the machine learning lifecycle.
+
+### Phase 1 — Data Loading & Inspection
+Seismic waveform data is loaded and visualized to understand signal
+characteristics and noise behavior.
+
+### Phase 2 — Signal Preprocessing
+Waveforms are detrended, band-pass filtered (1–20 Hz), segmented into
+overlapping fixed-length windows, and normalized to create ML-ready samples.
+
+### Phase 3 — Feature Engineering & Classical ML
+Time- and frequency-domain features are extracted from each window.
+Classical machine learning models (Logistic Regression and Random Forest)
+are trained, improved using physics-informed features, and validated using
+cross-validation.
+
+### Phase 4 — Deep Learning (1D CNN)
+A 1D Convolutional Neural Network is trained directly on raw waveform windows
+to learn features automatically and compared against classical ML baselines.
+
+### Phase 5 — Explainability (XAI)
+Feature importance analysis is performed for classical ML models, and
+gradient-based saliency maps are used to qualitatively interpret CNN behavior.
+
+### Phase 6 — Error Analysis & Scientific Validation
+Misclassified samples are analyzed to understand failure modes, and
+limitations related to data size and sample independence are discussed.
+
+
 ### Data Limitations
 - Limited number of independent seismic events
 - Overlapping windows extracted from continuous waveforms
