@@ -63,6 +63,33 @@ gradient-based saliency maps are used to qualitatively interpret CNN behavior.
 Misclassified samples are analyzed to understand failure modes, and
 limitations related to data size and sample independence are discussed.
 
+## Results
+
+The performance of different modeling approaches was evaluated using accuracy,
+F1-score, and class-wise error analysis.
+
+- Classical machine learning models with engineered time–frequency features
+  achieved approximately **85% accuracy**, demonstrating strong performance
+  on limited data.
+- The 1D CNN achieved lower validation performance (≈ **65–70% accuracy**),
+  indicating overfitting due to limited independent seismic events.
+
+Rather than maximizing accuracy, the focus was on understanding model behavior
+and limitations.
+
+---
+
+## Key Insights
+
+- Physics-informed feature engineering significantly improves performance on
+  small seismic datasets.
+- Classical ML models outperform deep learning when data is limited and
+  interpretability is important.
+- CNNs require larger and more diverse datasets to generalize effectively.
+- Most classification errors occur on low signal-to-noise or ambiguous waveform
+  windows, which are difficult even for human analysts.
+
+
 
 ### Data Limitations
 - Limited number of independent seismic events
